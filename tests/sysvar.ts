@@ -13,12 +13,10 @@ describe("sysvar", () => {
     const tx = await program.methods
       .initialize()
       .accounts({
-        // pass the RecentBlockhashes sysvar public address to our instruction
-        recentBlockhashes: anchor.web3.SYSVAR_SLOT_HISTORY_PUBKEY,
+        // pass the slotHashes sysvar public address to our instruction
+        slotHashes: anchor.web3.SYSVAR_SLOT_HASHES_PUBKEY,
       })
       .rpc();
     console.log("Your transaction signature", tx);
   });
 });
-// recentBlockhashes: anchor.web3.SYSVAR_RECENT_BLOCKHASHES_PUBKEY,
-// stakeHistory: anchor.web3.SYSVAR_STAKE_HISTORY_PUBKEY,
